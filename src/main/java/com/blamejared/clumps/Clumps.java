@@ -22,18 +22,18 @@ public class Clumps {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
-        //        RenderingRegistry.registerEntityRenderingHandler(EntityXPOrbBig.class, new RenderXPOrbBig.Factory());//registerEntityRenderingHandler(EntityXPOrbBig.class, new RenderXPOrbBig(Minecraft.getMinecraft().getRenderManager()));
+                RenderingRegistry.registerEntityRenderingHandler(EntityXPOrbBig.class, new RenderXPOrbBig.Factory());//registerEntityRenderingHandler(EntityXPOrbBig.class, new RenderXPOrbBig(Minecraft.getMinecraft().getRenderManager()));
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "xp_orb_big"), EntityXPOrbBig.class, "xp_orb_big", 0, INSTANCE, 32,10,true);
         PROXY.registerEvents();
         PROXY.registerRenders();
     }
     
-//    @SubscribeEvent
-//    public void onRegistryRegister(RegistryEvent.Register<EntityEntry> event) {
-//        EntityEntry value = new EntityEntry(EntityXPOrbBig.class, "xp_orb_big");
-//        value.setRegistryName(Reference.MODID, "xp_orb_big");
-//        event.getRegistry().register(value);
-//    }
+    @SubscribeEvent
+    public void onRegistryRegister(RegistryEvent.Register<EntityEntry> event) {
+        EntityEntry value = new EntityEntry(EntityXPOrbBig.class, "xp_orb_big");
+        value.setRegistryName(Reference.MODID, "xp_orb_big");
+        event.getRegistry().register(value);
+    }
     
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
