@@ -14,7 +14,7 @@ public class ClientProxy extends CommonProxy {
 	
 	public void registerRenders() {
         RenderingRegistry.registerEntityRenderingHandler(EntityXPOrbBig.class, new RenderXPOrbBig.Factory());//registerEntityRenderingHandler(EntityXPOrbBig.class, new RenderXPOrbBig(Minecraft.getMinecraft().getRenderManager()));
-//        Minecraft.getMinecraft().getRenderManager().entityRenderMap.put(EntityXPOrbBig.class, new RenderXPOrbBig(Minecraft.getMinecraft().getRenderManager()));
+        Minecraft.getMinecraft().getRenderManager().entityRenderMap.put(EntityXPOrbBig.class, new RenderXPOrbBig(Minecraft.getMinecraft().getRenderManager()));
 	}
     
 }
